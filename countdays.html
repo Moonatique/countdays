@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <style media="screen">
+      .countdays-wrapper {
+          height: 307px;
+          border: solid 1px #333333;
+      }
+
+      .countdays-wrapper h4 {
+        height: 117px;
+        line-height: 117px;
+        padding: 10px 15px;
+        margin: 0;
+        background-color: #333333;
+        color: #ffffff;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      .countdays-time-wrapper {
+        height: 170px;
+        background-color: #ffffff;
+        color: #333333;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: bold;
+        font-size: 30px;
+      }
+
+      .countdays-time {
+        height: 120px;
+        line-height: 120px;
+      }
+
+      .countdays-time-wrapper .circle-wrapper {
+        height: 50px;
+      }
+
+      .countdays-time-wrapper .circle {
+        display: inline-block;
+        margin: 5px;
+        width: 10px;
+        height: 10px;
+        border: solid 1px #333333;
+        border-radius: 50%;
+      }
+    </style>
+    <div class="countdays-wrapper">
+      <h4>
+        En <em>Amérique du Sud</em> depuis
+      </h4>
+      <div class="countdays-time-wrapper">
+        <div class="cirle-wrapper">
+          <span class="circle"></span>
+          <span class="circle"></span>
+        </div>
+        <div class="countdays-time"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const today = new Date().getTime();
+      const start = new Date('2017-09-15').getTime();
+      const daysP =  parseInt((today - start) / (24 * 3600 * 1000), 10);
+      let timeWrapper = document.getElementsByClassName('countdays-time')[0];
+      timeWrapper.innerHTML = daysP + ' jours';
+    </script>
+  </body>
+</html>
